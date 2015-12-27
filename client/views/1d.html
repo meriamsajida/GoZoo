@@ -1,0 +1,43 @@
+<div>
+  <center>
+    <h1>{{title}}</h1>
+
+    <p>{{description}}</p>
+
+    <hr>
+
+    <div>
+      Alimentation :
+      <select ng-options="alimentation.name for alimentation in filter.animals.alimentations"
+              ng-model="filterAnimalsSelectedAlimentation"
+              ng-change="filterChange()">
+        <option value="">-- Choisir une alimentation --</option>
+      </select>
+
+      Famille :
+      <select ng-options="family.name for family in filter.animals.families"
+              ng-model="filterAnimalsSelectedFamily"
+              ng-change="filterChange()">
+        <option value="">-- Choisir une famille --</option>
+      </select>
+
+      <br><br>
+
+      <table border="1">
+        <tr>
+          <th>Espece</th>
+          <th>Alimentation</th>
+          <th>Famille</th>
+          <th>Location</th>
+        </tr>
+        <tr ng-repeat="animal in animals">
+          <td>{{animal.espece}}</td>
+          <td>{{animal.Alimentation}}</td>
+          <td>{{animal.Famille}}</td>
+          <td>x:{{animal.x}}, y:{{animal.y}}</td>
+        </tr>
+      </table>
+    </div>
+
+  </center>
+</div>
