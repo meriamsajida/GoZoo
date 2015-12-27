@@ -1,13 +1,11 @@
-'use strict';
-
 var fs = require('fs');
 var underscore = require('underscore');
 
  /**
-  * Module variables.
+  * Les variables du module.
   * @private
   */
-var _router;
+var _appExpress;
 
 /**
  * Module exports.
@@ -16,13 +14,13 @@ var _router;
 module.exports = AnimalController;
 
 /**
- * Initialize `AnimalController` with the given `router`,
+ * Initialize `AnimalController` with the given `appExpress`,
  *
- * @param {String} router
+ * @param {String} appExpress
  * @public
  */
-function AnimalController(router) {
-  _router = router;
+function AnimalController(appExpress) {
+  _appExpress = appExpress;
   configRoute();
 }
 
@@ -30,17 +28,17 @@ function AnimalController(router) {
  * Configuration des routes
  */
 var configRoute = function (){
-  _router.get('/animals/criteria/:alimentation/:famille', animalsByCriteriaAction);
-
-  _router.get('/animals/alimentation/:alimentation', animalsByAlimentationAction);
-
-  _router.get('/animals/famille/:famille', animalsFamilleAction);
-
-  _router.get('/animals', animalsAction);
-
-  _router.get('/', defaultAction)
+  _appExpress
+    .get('/animals/criteria/:alimentation/:famille', animalsByCriteriaAction)
+    .get('/animals/alimentation/:alimentation', animalsByAlimentationAction)
+    .get('/animals/famille/:famille', animalsFamilleAction)
+    .get('/animals', animalsAction)
+    .get('/', defaultAction)
 };
 
+/**
+ * Les animaux filtés par aliemntation et par famille
+ */
 var animalsByCriteriaAction = function(req, res) {
 
   console.log('===============================================');
@@ -68,6 +66,9 @@ var animalsByCriteriaAction = function(req, res) {
   res.end(JSON.stringify(animals));
 };
 
+/**
+ *Les animaux filtés par aliemntation
+ */
 var animalsByAlimentationAction = function(req, res) {
 
   console.log('===============================================');
@@ -94,6 +95,9 @@ var animalsByAlimentationAction = function(req, res) {
   res.end(JSON.stringify(animals));
 };
 
+/**
+ * Les animaux filtés par famille
+ */
 var animalsFamilleAction = function(req, res) {
 
   console.log('===============================================');
@@ -120,6 +124,9 @@ var animalsFamilleAction = function(req, res) {
   res.end(JSON.stringify(animals));
 };
 
+/**
+ * Tous animaux
+ */
 var animalsAction = function(req, res) {
 
   console.log('===============================================');
@@ -129,21 +136,14 @@ var animalsAction = function(req, res) {
   res.setHeader('Content-Type', 'application/json; charset=utf-8');
   res.setHeader('Access-Control-Allow-Origin', '*');
 
-  console.log('req.params : ');
-  console.log(req.params);
-
   var jsonData = readJsonFile();
 
-  var query = {};
-
-  console.log('query : ');
-  console.log(query);
-
-  var animals = underscore.where(jsonData.Animaux, query);
-
-  res.end(JSON.stringify(animals));
+  res.end(JSON.stringify(jsonData.Animaux));
 };
 
+/**
+ * Action par défaut, redirege vers /animals
+ */
 var defaultAction = function(req, res) {
 
   console.log('===============================================');
@@ -153,11 +153,13 @@ var defaultAction = function(req, res) {
   res.setHeader('Content-Type', 'application/json; charset=utf-8');
   res.setHeader('Access-Control-Allow-Origin', '*');
 
-  var dataJson = readJsonFile();
-
-  res.end(JSON.stringify(dataJson));
+  console.log("res.redirect('/animals'");
+  res.redirect('/animals');
 };
 
+/**
+ * Lire le fichier data/zoo.json
+ */
 var readJsonFile = function() {
   var data = fs.readFileSync('data/zoo.json');
   var dataJson = JSON.parse(data);

@@ -1,12 +1,10 @@
 var express = require('express');
 var appExpress = express();
-var router = express.Router();
 
 var animalController = require('./controllers/animalController');
-animalController(router);
+animalController(appExpress);
 
-appExpress.use(router);
-
+// Ecouter les requetes HTTP sur le port 8888
 appExpress.listen(8888, function () {
   console.log('Ready');
 });
