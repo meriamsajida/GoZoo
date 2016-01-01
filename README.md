@@ -10,7 +10,7 @@ Cette application utilise les technologies suivantes :
 ## Lancement
 
 ```
-node server/server.js
+GoZoo/server> node server/server.js
 ```
 
 ## Contributeurs
