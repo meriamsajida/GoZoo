@@ -15,5 +15,4 @@ GooZoo/server> node server.js
 
 ## Contributeurs
 
-Bouhassi
-Soltan
+Bouhassi et Soltan
