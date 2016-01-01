@@ -1,0 +1,30 @@
+{
+  "name": "gozoo",
+  "version": "1.0.0",
+  "description": "Géolocalisation des zoos",
+  "main": "server/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meriamsajida/GoZoo.git"
+  },
+  "keywords": [
+    "nodejs",
+    "angularjs",
+    "threejs",
+    "geolocation"
+  ],
+  "author": "Bouhassi and Soltan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/meriamsajida/GoZoo/issues"
+  },
+  "homepage": "https://github.com/meriamsajida/GoZoo#readme",
+  "dependencies": {
+    "express": "^4.13.3",
+    "fs": "0.0.2",
+    "underscore": "^1.8.3"
+  }
+}
