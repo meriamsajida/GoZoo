@@ -33,7 +33,7 @@ var configRoute = function (){
     .get('/animals/alimentation/:alimentation', animalsByAlimentationAction)
     .get('/animals/famille/:famille', animalsFamilleAction)
     .get('/animals', animalsAction)
-    .get('/', defaultAction)
+    //.get('/', defaultAction)
 };
 
 /**

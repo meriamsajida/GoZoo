@@ -16,10 +16,10 @@ Cette application utilise les technologies suivantes :
 > node server.js
 ```
 
-## Point d'entrée à l'application (angularjs)
+## Point d'entrée à l'application
 
 ```
-index.html
+http://localhost:8888/
 ```
 
 ## Contributeurs
