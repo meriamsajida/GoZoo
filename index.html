@@ -1,0 +1,31 @@
+<!doctype html>
+<html ng-app="goZoo">
+  <head>
+    <title>GoZoo - Created by BOUHASSI and SOLTAN</title>
+
+    <meta charset="utf-8">
+
+    <!-- angularjs -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script type="text/javascript" src="https://code.angularjs.org/1.4.8/angular-route.min.js"></script>
+    <!-- threejs -->
+    <script type="text/javascript" src="bower_components/three.js/build/three.min.js"></script>
+    <script type="text/javascript" src="bower_components/threex-colladaloader/ColladaLoader.js"></script>
+    <!-- d3.js -->
+    <script type="text/javascript" src="bower_components/d3/d3.min.js"></script>
+
+    <!-- Le module principale de l'application -->
+    <script type="text/javascript" src="public/js/client-app.js"></script>
+
+    <!-- Les controlleurs -->
+    <script type="text/javascript" src="public/js/controllers/config/routeProvider.js"></script>
+    <script type="text/javascript" src="public/js/controllers/defaultController.js"></script>
+    <script type="text/javascript" src="public/js/controllers/oneDimController.js"></script>
+    <script type="text/javascript" src="public/js/controllers/twoDimController.js"></script>
+    <script type="text/javascript" src="public/js/controllers/threeDimController.js"></script>
+
+  </head>
+  <body>
+    <ng-view></ng-view>
+  </body>
+</html>

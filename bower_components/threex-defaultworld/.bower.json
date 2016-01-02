@@ -1,0 +1,36 @@
+{
+  "name": "threex-defaultworld",
+  "version": "0.0.2",
+  "homepage": "https://github.com/gastrodia/threex-defaultworld",
+  "authors": [
+    "ELatA <elata@foxmail.com>"
+  ],
+  "description": "var world = new DefaultWorld(); world.run();",
+  "main": "defaultworld.js",
+  "keywords": [
+    "three.js"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "three.js": "*",
+    "threex-controls": "*",
+    "requirejs": "~2.1.11",
+    "threejs-stats": "*"
+  },
+  "_release": "0.0.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.0.2",
+    "commit": "9a269e417783fc183eb3e96a0261f6b0a6c221de"
+  },
+  "_source": "git://github.com/gastrodia/threex-defaultworld.git",
+  "_target": "0.0.2",
+  "_originalSource": "threex-defaultworld"
+}

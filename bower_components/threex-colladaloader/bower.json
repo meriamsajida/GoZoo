@@ -1,0 +1,28 @@
+{
+  "name": "threex-colladaloader",
+  "version": "0.0.0",
+  "homepage": "https://github.com/gastrodia/threex-colladaloader",
+  "authors": [
+    "gastrodia <ipv6.elata@gmail.com>"
+  ],
+  "description": "let's use colladaloader as a bower package ..:)",
+  "main": "ColladaLoader.js",
+  "keywords": [
+    "three.js","dae","colladaloader"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "three.js": "*",
+    "threex-controls": "*",
+    "threex-defaultworld":"0.0.2",
+    "requirejs": "~2.1.11",
+    "threejs-stats": "*"
+  }
+}

@@ -161,7 +161,7 @@ var defaultAction = function(req, res) {
  * Lire le fichier data/zoo.json
  */
 var readJsonFile = function() {
-  var data = fs.readFileSync('data/zoo.json');
+  var data = fs.readFileSync('./server/data/zoo.json');
   var dataJson = JSON.parse(data);
 
   return dataJson;
