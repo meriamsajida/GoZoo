@@ -11,10 +11,17 @@ var initalizeSVG =function($scope,$http){
 	$scope.title = "2D";
 	$scope.description = "Géolocalisation dans le zoo avec un rendu 2D";
 
-	var url = 'http://localhost:8888/filter';
+	//var url = 'http://localhost:8888/filter';
+	//$http.get(url).then(function(response) {
+	//	$scope.filter = response.data;
+	//});
+
+	var url = 'http://localhost:8888/mongodb/filter';
 	$http.get(url).then(function(response) {
+		console.log(response.data);
 		$scope.filter = response.data;
 	});
+
 
 	$scope.svg = d3.select("#alpha").append("svg").attr('height',"1080")
 	.attr('width',"1920")
@@ -25,31 +32,24 @@ var initalizeSVG =function($scope,$http){
 var applyFilterSVG = function($scope, $http) {
   console.log('applyFilter()');
   
-  // Si les deux filtres (alimentation et famille) sont sélectionnés
-  if($scope.filterAnimalsSelectedAlimentation && $scope.filterAnimalsSelectedFamily)
-  {
-    var url = 'http://localhost:8888/animals/criteria/' + $scope.filterAnimalsSelectedAlimentation.name + '/' + $scope.filterAnimalsSelectedFamily.name;
-  }
-  // Sinon, si l'alimentation est sélectionée
-  else if($scope.filterAnimalsSelectedAlimentation)
-  {
-    var url = 'http://localhost:8888/animals/alimentation/' + $scope.filterAnimalsSelectedAlimentation.name;
-  }
-  // Sinon, si la famille est sélectionée
-  else if($scope.filterAnimalsSelectedFamily)
-  {
-    var url = 'http://localhost:8888/animals/famille/' + $scope.filterAnimalsSelectedFamily.name;
-  // Sinon et par défaut (aucun filtre n'est sélectionné)
+  var url = "http://localhost:8888/mongodb/animals/";
+  if($scope.filterAnimalsSelectedAlimentation) {
+    url +=$scope.filterAnimalsSelectedAlimentation.name +"/";
   } else {
-    var url = 'http://localhost:8888/animals';
+  	url += "none/";
+  }
+  
+  if($scope.filterAnimalsSelectedFamily) {
+    url+=$scope.filterAnimalsSelectedFamily.name;
+  }else {
+  	url +="none";
   }
 
   console.log("$http.get : " + url);
 
-  // Récupérer les données du serveur
-  // TODO à mettre dans un service ou une factory Angular
   $http.get(url).then(function(response) {
-    afficherSVG(response.data,$scope.svg);
+  	console.log(response.data);
+    afficherSVG(response.data,$scope.svg);	
   });
 }
 
@@ -68,7 +68,7 @@ var bindEventsSVG = function($scope, $http) {
 
 var afficherSVG = function($data, $svg){
 
-	
+	// supprimmer les anciennes informations
 	var ele= d3.select("#alpha")[0][0].firstChild;
 	ele.innerHTML="";
 	
@@ -78,7 +78,17 @@ var afficherSVG = function($data, $svg){
 	.enter()
 	.append("g")
 	.attr("class","node")
-	.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+	.attr("transform", function(d) 
+		{ return "translate(" + d.x + "," + d.y + ")"; })
+	
+	.on("click",function(d)
+		{ var text =d3.select(this)[0][0].childNodes[1]; 
+			if(text.innerHTML==JSON.stringify(d)){
+				text.innerHTML = d.espece;
+			} else {
+				text.innerHTML = JSON.stringify(d);
+			}
+		});
 
 
 	//nodes.append("circle")
@@ -96,5 +106,8 @@ var afficherSVG = function($data, $svg){
 	nodes.append("text")
 	.attr("dy", ".3em")
 	.style("text-anchor", "middle")
-	.text(function(d) { return d.espece; });
+	.attr("fill","cyan")
+	.text(function(d) { return d.espece; })
+	
+
 }
