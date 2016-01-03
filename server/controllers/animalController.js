@@ -33,7 +33,7 @@ var configRoute = function (){
     .get('/animals/alimentation/:alimentation', animalsByAlimentationAction)
     .get('/animals/famille/:famille', animalsFamilleAction)
     .get('/animals', animalsAction)
-    //.get('/', defaultAction)
+    .get('/filter', getFilter)
 };
 
 /**
@@ -157,6 +157,29 @@ var defaultAction = function(req, res) {
   res.redirect('/animals');
 };
 
+
+
+
+/**
+ * Recupérer les filter
+ */
+var getFilter = function(req, res) {
+
+  console.log("'/filter'");
+
+  
+  res.setHeader('Content-Type', 'application/json; charset=utf-8');
+  res.setHeader('Access-Control-Allow-Origin', '*');
+
+  var jsonData = readJsonFilter();
+
+  console.log(jsonData);
+
+  //console.log(jsonData);
+ 
+  res.end(JSON.stringify(jsonData));
+};
+
 /**
  * Lire le fichier data/zoo.json
  */
@@ -164,5 +187,15 @@ var readJsonFile = function() {
   var data = fs.readFileSync('./server/data/zoo.json');
   var dataJson = JSON.parse(data);
 
+  return dataJson;
+}
+
+
+/**
+ * Lire le fichier data/filter.json
+ */
+var readJsonFilter = function() {
+  var data = fs.readFileSync('./server/data/filter.json');
+  var dataJson = JSON.parse(data);
   return dataJson;
 }

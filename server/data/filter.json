@@ -1,0 +1,25 @@
+ {
+  "animals": {
+    "alimentations": [{
+      "name": "Carnivore"
+    }, {
+      "name": "Herbivore"
+    }, {
+      "name": "Détritivore"
+    }, {
+      "name": "Omnivore"
+    }],
+
+    "families": [{
+      "name": "Mammifères"
+    }, {
+      "name": "Crocodiliens"
+    }, {
+      "name": "Reptiles"
+    }, {
+      "name": "Oiseaux"
+    }, {
+      "name": "Poisson"
+    }]
+  }
+ }

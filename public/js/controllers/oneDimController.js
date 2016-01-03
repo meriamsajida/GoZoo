@@ -10,7 +10,7 @@ appGoZoo.controller("oneDimController", function($scope, $http) {
 
 });
 
-var intialize = function($scope) {
+var intialize = function($scope, $http) {
   console.log("Intialize");
 
   $scope.title = "1D";
