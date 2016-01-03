@@ -2,7 +2,7 @@ appGoZoo.controller("oneDimController", function($scope, $http) {
 
   console.log("oneDimController");
 
-  intialize($scope);
+  intialize($scope,$http);
 
   applyFilter($scope, $http);
 
@@ -16,33 +16,10 @@ var intialize = function($scope, $http) {
   $scope.title = "1D";
   $scope.description = "Affichage des données du zoo avec la possibilité de filtrage";
 
-  // TODO à extraire automatiquement du fichier data  JSON sur le serveur (injecter $http)
-  $scope.filter = {
-    animals: {
-      alimentations: [{
-        name: "Carnivore"
-      }, {
-        name: "Herbivore"
-      }, {
-        name: "Détritivore"
-      }, {
-        name: "Omnivore"
-      }],
-
-      families: [{
-        name: "Mammifères"
-      }, {
-        name: "Crocodiliens"
-      }, {
-        name: "Reptiles"
-      }, {
-        name: "Oiseaux"
-      }, {
-        name: "Poisson"
-      }]
-
-    }
-  };
+  var url = 'http://localhost:8888/filter';
+  $http.get(url).then(function(response) {
+    $scope.filter = response.data;
+  });
 }
 
 var applyFilter = function($scope, $http) {
