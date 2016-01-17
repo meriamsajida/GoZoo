@@ -13,7 +13,7 @@ appGoZoo.config(['$routeProvider', function($routeProvider) {
       controller: 'twoDimController',
       templateUrl: 'views/2d.html'
     })
-    .when('/3d', {
+    .when('/3d/:image', {
       controller: 'threeDimController',
       templateUrl: 'views/3d.html'
     })

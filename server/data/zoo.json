@@ -4,90 +4,105 @@
     "Alimentation": "Carnivore",
     "Famille": "Mammifères",
     "x": 201,
-    "y": 1031
+    "y": 1031,
+    "Image" : "lion.jpg"
   }, {
     "espece": "Tigre",
     "Alimentation": "Carnivore",
     "Famille": "Mammifères",
     "x": 475,
-    "y": 1045
+    "y": 1045,
+    "Image" : "tigre.jpg"
   }, {
     "espece": "Zèbre",
     "Alimentation": "Herbivore",
     "Famille": "Mammifères",
     "x": 1187,
-    "y": 161
+    "y": 161,
+    "Image" : "zebre.jpg"
   }, {
     "espece": "Elephan",
     "Alimentation": "Herbivore",
     "Famille": "Mammifères",
     "x": 759,
-    "y": 913
+    "y": 913,
+    "Image" : "elephant.jpg"
   }, {
     "espece": "Lama",
     "Alimentation": "Herbivore",
     "Famille": "Mammifères",
     "x": 407,
-    "y": 383
+    "y": 383,
+    "Image" : "Lama.jpg"
   }, {
     "espece": "Girafe",
     "Alimentation": "Herbivore",
     "Famille": "Mammifères",
     "x": 441,
-    "y": 731
+    "y": 731,
+    "Image" : "Girafe.jpg"
   }, {
     "espece": "Chévre naine",
     "Alimentation": "Herbivore",
     "Famille": "Mammifères",
     "x": 1787,
-    "y": 627
+    "y": 627,
+    "Image" : "Chevre_naine.jpg"
   }, {
     "espece": "Serval",
     "Alimentation": "Carnivore",
     "Famille": "Mammifères",
     "x": 549,
-    "y": 1019
+    "y": 1019,
+    "Image" : "serval.jpg"
   }, {
     "espece": "Guépard",
     "Alimentation": "Carnivore",
     "Famille": "Mammifères",
     "x": 527,
-    "y": 881
+    "y": 881,
+    "Image" : "Guepard.jpg"
   }, {
     "espece": "Panthère",
     "Alimentation": "Carnivore",
     "Famille": "Mammifères",
     "x": 679,
-    "y": 767
+    "y": 767,
+    "Image" : "Panthere.jpg"
   }, {
     "espece": "Singe",
     "Alimentation": "Omnivore",
     "Famille": "Mammifères",
     "x": 1281,
-    "y": 501
+    "y": 501,
+    "Image" : "singes.jpg"
   }, {
     "espece": "Crocodile",
     "Alimentation": "Carnivore",
     "Famille": "Crocodiliens",
     "x": 1573,
-    "y": 311
+    "y": 311,
+    "Image" : "640px-Crocodylus_acutus.jpg"
   }, {
     "espece": "Serpent",
     "Alimentation": "Carnivore",
     "Famille": "Reptiles",
     "x": 605,
-    "y": 319
+    "y": 319,
+    "Image" : "serpent.jpg"
   }, {
     "espece": "Autruche",
     "Alimentation": "Herbivore",
     "Famille": "Oiseaux",
     "x": 213,
-    "y": 501
+    "y": 501,
+    "Image" : "autruche.jpg"
   }, {
     "espece": "Poisson chat",
     "Alimentation": "Détritivore",
     "Famille": "Poisson",
     "x": 881,
-    "y": 509
+    "y": 509,
+    "Image" : "Poisson-chat.jpg"
   }]
 }

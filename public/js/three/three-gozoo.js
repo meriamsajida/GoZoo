@@ -21,8 +21,9 @@ var windowHalfY = window.innerHeight / 2;
 var wallSideWidth = 1000;
 var wallWidth = 500, wallHeigth = 600;
 
-
 var clock = new THREE.Clock();
+
+var currentImageAnimal;
 
 function init() {
   // L'élément HTML conteneur du rendu 3D
@@ -34,8 +35,8 @@ function init() {
   renderer.setSize( window.innerWidth, window.innerHeight - 200 );
 
   // Ajout du rendu sur la page
-  //container.append( renderer.domElement );
-  document.body.appendChild( renderer.domElement );
+  container.append( renderer.domElement );
+  //document.body.appendChild( renderer.domElement );
 
   // Le paramètrage de la caméra
 	camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 1, cameraFar );
@@ -83,14 +84,12 @@ function init() {
   scene.add( meshTerrain );
 
   // Animal
-  /*
-  var textureImage = THREE.ImageUtils.loadTexture( 'public/content/images/animals/640px-Crocodylus_acutus.jpg' );
+  var textureImage = THREE.ImageUtils.loadTexture( 'content/images/animals/' + currentImageAnimal );
   materialImage = new THREE.MeshBasicMaterial( {map: textureImage, side: THREE.FrontSide} ); // Le mur a une seule face
-  var geometryImageSide = new THREE.PlaneGeometry( 320, 240 );
+  var geometryImageSide = new THREE.PlaneGeometry( wallSideWidth - 50, wallHeigth - 50 );
   geometryImageSide.translate( 0, 0, 1 ); // le mur en face, derrière le centre
   var meshImageSide = new THREE.Mesh( geometryImageSide, materialImage );
   scene.add( meshImageSide );
-  */
 
   // Init events
   initEvents()
@@ -203,7 +202,10 @@ function render() {
 
 }
 
-function start3d() {
+function start3d(image) {
+
+  currentImageAnimal = image;
+
   init();
   animate();
 }
