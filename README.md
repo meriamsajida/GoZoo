@@ -24,6 +24,10 @@ http://localhost:8888/
 ## Structure du projet
 
 * node_modules : les modules Nodejs utilisés dans le projet (ex. express, fs ..etc).
+ * express
+ * fs
+ * mongodb
+ * underscore
 * public : le code HTML et Javascript de angularjs et les scripts 2D et 3D.
 * server : la partie serveur (nodejs) de l'application qui contient les routes pour filtrer les données JSON.
 * server.js : le fichier à exécuter par Nodejs.
