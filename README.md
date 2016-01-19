@@ -31,7 +31,7 @@ http://localhost:8888/
 * **public** : le code HTML et Javascript de angularjs et les scripts 2D et 3D.
  * bower_components : contient les bibliothèques JavaScript utilisées dans la partie client de l'application :
   ```
-  bower est le gestion des bibliothèques JavaScript. C'est l'équivalent de "npm" mais coté client.
+  bower est le gestionnaire des bibliothèques JavaScript. C'est l'équivalent de "npm" mais coté client.
   * d3 : bibliothèque utilisée dans l'affichage 2D.
   * three.js : bibliothèque utilisée dans l'affichage 3D.
   * angularjs : n'est pas téléchargé mais utilisé directement à partir de https://ajax.googleapis.com et https://code.angularjs.org
