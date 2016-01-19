@@ -30,14 +30,18 @@ http://localhost:8888/
  * [underscore](http://underscorejs.org) : utilisé pour sélectionner les données du fichier JSON on fonction du filtre utilisateur.
 * **public** : le code HTML et Javascript de angularjs et les scripts 2D et 3D.
  * bower_components : contient les bibliothèques JavaScript utilisées dans la partie client de l'application :
+ ```
   * d3 : bibliothèque utilisée dans l'affichage 2D.
   * three.js : bibliothèque utilisée dans l'affichage 3D.
   * angularjs : n'est pas téléchargé mais utilisé directement à partir de https://ajax.googleapis.com et https://code.angularjs.org
+  ```
  * content : ce répertoire contient éléments statiques de l'application, par exemple les images.
  * js : contient les traitement JavaScript de la partie client de l'application.
+  ```
   * controllers : contient les controlleurs Angularjs avec leur configuration.
   * three : contient de fichier JavaScript qui gére le rendu 3D.
   * client-app.js : ce fichier crée le module principal de Angularjs.
+  ```
  * views : ce répertoire contient les vues Angularjs pour les trois rendues (1D, 2D et 3D) en plus de la page d'accueil.
  * index.html : c'est la page principal de l'application et qui joue le role de Layout.
 * **server** : la partie serveur (nodejs) de l'application qui contient les routes pour filtrer les données JSON.
