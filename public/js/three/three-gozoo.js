@@ -95,28 +95,11 @@ function init() {
   initEvents()
 }
 
-/*
-function onWindowResize() {
-
-	camera.aspect = (window.innerWidth - 200) / (window.innerHeight - 200);
-	camera.updateProjectionMatrix();
-
-	renderer.setSize( window.innerWidth - 200, window.innerHeight - 200 );
-
-}
-*/
-
 function animate() {
+  // Appel recursif de cette fonction (animate)
 	requestAnimationFrame( animate );
 
-	//meshBox.rotation.x = meshBox.rotation.x + 0.01;
-	//mesh.rotation.y += 0.01;
-
-  //meshPlaneRight.rotation.y = 180;
-
-  //camera.rotation.x = camera.rotation.x + 0.01;
-	//renderer.render( scene, camera );
-
+  // afficher la scene en fonction de la camera
   render();
 }
 
@@ -129,13 +112,6 @@ function initEvents() {
   keyboard.domElement.addEventListener('keydown', function(event){
   	console.log('keydown event');
     event.preventDefault();
-    /*
-    if( keyboard.pressed('left') ){
-		    camera.position.x += 5;
-		}else if( keyboard.pressed('right') ){
-		    camera.position.x -= 5;
-		}
-    */
 
     if ( keyboard.eventMatches(event, 'up') ){
       if( keyboard.pressed('shift') ){
@@ -155,15 +131,6 @@ function initEvents() {
         camera.position.z += 5;
       }
     }
-
-    /*
-		if( keyboard.pressed('shift+down') ){
-		    camera.position.z += 5;
-		}else if( keyboard.pressed('shift+up') ){
-		    camera.position.z -= 5;
-		}
-    */
-
 
   })
 
